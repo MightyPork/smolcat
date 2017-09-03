@@ -32,7 +32,7 @@ int main(void)
     char c = getchar();
     int n = c == 27 ? 33 : 36;
     if(c==27)printf("\n");
-    printf("%2d \e[%dm%c\e[m ", c, n, c); // <- change d to X or x if you want hex
+    printf("%2d \e[%dm%c\e[m ", c, n, c<32||c>126?'.':c); // <- change d to X or x if you want hex
   }
 }
 
